@@ -12,8 +12,8 @@ int leftTapeQRD = 3;
 int rightTapeQRD = 2;
 
 //thresholds for tape following QRDs
-int leftThreshold = 485;
-int rightThreshold = 120;
+int leftThreshold = 470;
+int rightThreshold = 100;
 
 //idol detector (qrd) pin
 int idolSensorPin = 1;
@@ -100,7 +100,7 @@ void setup()
         LCD.setCursor(0,0);  LCD.clear();  LCD.home() ;
         LCD.print("motorSpeed");
         LCD.print(" ");
-        LCD.print(knob(knob_two));
+        LCD.print(motorSpeed);
         motorSpeed = knob(knob_two);
         LCD.setCursor(0,1);
         LCD.print("Adjust");
@@ -120,8 +120,6 @@ void setup()
 void loop() 
 {
    followTape();
-     
-     
    LCD.setCursor(0,0);  LCD.clear();  LCD.home() ;
    LCD.print("L");
    LCD.print(" ");

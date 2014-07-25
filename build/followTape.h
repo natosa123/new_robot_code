@@ -54,14 +54,14 @@ inline void followTape()
         timeSinceDiffErr = 0;
     }
     timeSinceDiffErr = timeSinceDiffErr + 1;
-    if ((timeSinceDiffErr > 75) && (error == 5))
+    if ((timeSinceDiffErr > 50) && (error == 5))
     {
       RCServo1.write(servoPosition);
       motor.speed(rightWheelPin, 1023) ;
       motor.speed(leftWheelPin, -1023) ;
       return;
     }
-    else if ((timeSinceDiffErr > 75) && (error == -5))
+    else if ((timeSinceDiffErr > 50) && (error == -5))
       {
         RCServo1.write(servoPosition);
         motor.speed(rightWheelPin, -1023) ;
